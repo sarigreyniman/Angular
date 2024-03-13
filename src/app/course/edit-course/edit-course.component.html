@@ -1,0 +1,121 @@
+<h2>Edit Course</h2>
+<form  (ngSubmit)="onSubmit()">
+  <div>
+    <label for="courseName">Course Name</label>
+    <input type="text" formControlName="courseName" id="courseName">
+  </div>
+  <div>
+    <label for="categoryId">Category ID</label>
+    <input type="number" formControlName="categoryId" id="categoryId">
+  </div>
+  <div>
+    <label for="severalLessons">Number of Lessons</label>
+    <input type="number" formControlName="severalLessons" id="severalLessons">
+  </div>
+  <div>
+    <label for="startDate">Start Date</label>
+    <input type="date" formControlName="startDate" id="startDate">
+  </div>
+  <div>
+    <label for="syllabus">Syllabus</label>
+    <textarea formControlName="syllabus" id="syllabus"></textarea>
+  </div>
+  <div>
+    <label for="throughLearning">Through Learning</label>
+    <select formControlName="throughLearning" id="throughLearning">
+      <option *ngFor="let way of learningWays" [value]="way">{{ way }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="lecturerId">Lecturer ID</label>
+    <input type="number" formControlName="lecturerId" id="lecturerId">
+  </div>
+  <div>
+    <label for="imgURL">Image URL</label>
+    <input type="text" formControlName="imgURL" id="imgURL">
+  </div>
+  <button type="submit">Save Changes</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <form [formGroup]="MyFormGroup">
+        <mat-form-field>
+            <mat-label>Enter course name</mat-label>
+            <input matInput formControlName="courseName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Select course category</mat-label>
+            <mat-select formControlName="categoryId">
+                <mat-option [value]="category._id" *ngFor="let category of categories">
+                    {{category.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>amountLessons</mat-label>
+            <input matInput formControlName="throughLearning">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>startCourseDate</mat-label>
+            <input matInput formControlName="startDate">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>syllabusArr</mat-label>
+            <input matInput formControlName="syllabus">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label >wayLearning</mat-label>
+            <mat-select formControlName="throughLearning">
+                <mat-option value="zoom">zoom</mat-option>
+                <mat-option value="frontaly">frontaly</mat-option>
+    
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>image</mat-label>
+            <input matInput formControlName="image" type="url">
+            <img [src]="MyFormGroup.controls['image'].value" *ngIf="MyFormGroup.controls['image'].value"
+                style="max-width: 100px; max-height: 100px;">
+        </mat-form-field>
+        
+        <mat-form-field *ngFor="let videoCtrl of MyFormGroup.get('syllabusArr')['controls']; let i = index" style="display: flex; align-items: center;">
+            <mat-label style="flex: 1;">Enter lesson {{ i + 1 }}</mat-label>
+            <div style="flex: 1; position: relative;">
+              <input matInput [formControl]="videoCtrl" style="width: 100%;">
+              <mat-icon  (click)="removeVideo(i)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); cursor: pointer;">cancel</mat-icon>
+            </div>
+          </mat-form-field>
+          
+          <button mat-raised-button (click)="addVideo()">Add lesson</button>
+      
+        <button mat-raised-button color="primary" (click)="saveCourse()">add course</button>
+    </form>
+    </div> -->
+
+
+
+
+
+<!-- [formGroup]="editCourseForm" -->
+
